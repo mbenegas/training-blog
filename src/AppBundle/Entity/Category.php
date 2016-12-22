@@ -35,6 +35,13 @@ class Category
      */
     private $slug;
 
+    /**
+     * @ORM\OneToMany(
+     *     targetEntity="AppBundle\Entity\Post",
+     *     mappedBy="category"
+     * )
+     */
+    private $post;
 
     /**
      * Get id

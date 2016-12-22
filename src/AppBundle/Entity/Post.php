@@ -56,6 +56,18 @@ class Post
      */
     private $enabled;
 
+    /**
+     * @ORM\ManyToOne(
+     *     targetEntity="Category",
+     *     inversedBy="post"
+     * )
+     * @ORM\JoinColumn(
+     *     name="category_id",
+     *     referencedColumnName="id",
+     *     nullable=false
+     * )
+     */
+    private $category;
 
     /**
      * Get id
