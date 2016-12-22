@@ -59,7 +59,7 @@ class Post
     /**
      * @ORM\ManyToOne(
      *     targetEntity="Category",
-     *     inversedBy="post"
+     *     inversedBy="posts"
      * )
      * @ORM\JoinColumn(
      *     name="category_id",
@@ -198,5 +198,28 @@ class Post
     {
         return $this->enabled;
     }
-}
 
+    /**
+     * Set category
+     *
+     * @param Category $category
+     *
+     * @return Post
+     */
+    public function setCategory(Category $category)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return Category
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+}
