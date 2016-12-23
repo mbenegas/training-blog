@@ -70,6 +70,11 @@ class Post
     private $category;
 
     /**
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Tag", mappedBy="posts")
+     */
+    private $tags;
+
+    /**
      * Get id
      *
      * @return int
